@@ -10,7 +10,13 @@ BreizhCTF is an event held in Rennes every year around the months of March-April
 
 There were six reversing challenges in the CTF, of which I managed to solve four. The last challenge wasn't flagged by any team during the event. I'll try to post a writeup if I manage to solve it later.
 
-### Challenge 1
+### Baby
+
+The first challenge was called Baby. It features a 64-bit ELF file. Given the name, it was pretty obvious that there was nothing complicated going on.
+```bash
+strings baby | grep BZHCTF
+BZHCTF{b4by_r3_f0r_y0u_g00d_luck!!}
+```
 
 ### Challenge 2
 
