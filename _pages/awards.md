@@ -5,7 +5,6 @@ permalink: /awards/
 ---
 
 <section>
-  TESTEST
   <ul>
   {% for award in site.awards reversed %}
     <li>
