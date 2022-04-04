@@ -93,7 +93,8 @@ paginate: 6
 paginate_path: /page/:num/
 
 collections:
-  - awards
+  awards : 
+    output: true
 
 
 # Exclude these files from your production _site
