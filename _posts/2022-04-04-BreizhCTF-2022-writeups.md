@@ -20,9 +20,10 @@ BZHCTF{b4by_r3_f0r_y0u_g00d_luck!!}
 
 ### Private App
 
-The second challenge revolves around an Android APK. My fist reflex was to open the app inside [JADX](https://github.com/skylot/jadx).
+The second challenge revolves around an Android APK. My fist reflex was to open the app inside [JADX](https://github.com/skylot/jadx). From the `AndroidManifest.xml` file, we can see that the Launcher Activity is `com.example.supersecretappui.login.LoginActivity`. From this activity, a listener is defined for the login button. It calls `LoginActivity.this.loginViewModel.login()` when clicked.
 
-### Challenge 3
+### Rusty Hammer
+
 
 ### Challenge 4
 
