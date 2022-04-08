@@ -38,7 +38,10 @@ pwd[1] ^ 'm' + 36 == 123  ==> pwd[1] = (120 - 36) ^ 'm' = '9'
 [...]
 pwd[7] == pwd[5] ^ pwd[2] ==> pwd[7] = 'M' ^ ':'        = 'w'
 ```
-We end up with ```BZHCTF{a9:VbMxw}```
+We end up with 
+```
+BZHCTF{a9:VbMxw}
+```
 
 
 ### Floppy 1
@@ -81,6 +84,5 @@ BZHCTF{Y0UR_4_R3AL_TRY_HARDER_W3LL_D0NE!}
 ```
 
 
-## Others
 
 
