@@ -23,9 +23,13 @@ BZHCTF{b4by_r3_f0r_y0u_g00d_luck!!}
 
 ### Private App
 
-The second challenge revolves around an Android APK. My fist reflex was to open the app inside [JADX](https://github.com/skylot/jadx). From the `AndroidManifest.xml` file, we can see that the Launcher Activity is `com.example.supersecretappui.login.LoginActivity`. From this activity, a listener is defined for the login button. It calls `LoginActivity.this.loginViewModel.login()` when clicked. 
+The second challenge revolves around an Android APK. The flag for this challenge is of the form `BZHCTF{*}` where the password used by the app should be put insde the braces. My fist reflex was to open the app inside [JADX](https://github.com/skylot/jadx). From the `AndroidManifest.xml` file, we can see that the Launcher Activity is `com.example.supersecretappui.login.LoginActivity`. From this activity, a listener is defined for the login button. It calls `LoginActivity.this.loginViewModel.login()` when clicked. 
 ![](/images/posts/BZHCTF2022/RE1.png)
 This function in turn calls `LoginRepository.login()`. A few calls deep, we end up at the bottom of the well, where the submitted password is actually checked, in the `verifiedPassword()` function.
+![](/images/posts/BZHCTF2022/RE4.png)
+From the caller function, we have the info that the flag is only 8 characters long.
+![](/images/posts/BZHCTF2022/RE#.png)
+We could also see that the login should be `kalucheAdmin:))` if we wanted to validate the password inside the app but since we're doing it on paper it isn't useful.
 
 
 
