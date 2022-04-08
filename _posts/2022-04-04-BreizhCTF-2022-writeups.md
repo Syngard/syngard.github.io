@@ -4,7 +4,7 @@ title: BreizhCTF 2022 Writeups
 categories: [CTF, Android]
 ---
 
-BreizhCTF is an event held in Rennes every year around the months of March-April. This year marked the third time I participated in the event, two years after the last one was held because of the pandemic. I went with two friends from my team T35H ([zTeeed](https://www.duboc.xyz/) and T0t0r0) as well as two colleagues from my company, since two people from the team weren't able to come (we had the tickets since two years ago).
+BreizhCTF is an event held in Rennes every year around the months of March-April. This year marked the third time I participated in the event, two years after the last one was held because of the pandemic. I went with two friends from my team T35H ([zTeeed](https://www.duboc.xyz/) and [T0t0r0](https://twitter.com/T0t0r04)) as well as two colleagues from my company, since two people from the team weren't able to come (we had the tickets since two years ago).
 We ended up finishing in 12th place out of 99 teams, which was pretty good given that most of us hadn't played CTF in quite some time.
 
 ![](/images/posts/BZHCTF2022/BZHCTF2022.png)
