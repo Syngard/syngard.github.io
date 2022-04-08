@@ -38,13 +38,23 @@ pwd[1] ^ 'm' + 36 == 123  ==> pwd[1] = (120 - 36) ^ 'm' = '9'
 [...]
 pwd[7] == pwd[5] ^ pwd[2] ==> pwd[7] = 'M' ^ ':'        = 'w'
 ```
-We end up with `BZHCTF{a9:VbMxw}`
+We end up with ```BZHCTF{a9:VbMxw}```
 
 
 ### Floppy 1
 
 This challenge was published during the night in a new "Android" category but it was still kind of a reversing challenge. It is based on a game which look like a copy of Flappy Bird. Not much info was given on how to find the flag but when we search for the string `flag` in the source code, we find this very intersting routine.
-![](/images/posts/BZHCTF2022/RE5.png)
+```java
+public void surfaceCreated(SurfaceHolder surfaceHolder) {
+    String l2 = Long.valueOf(System.currentTimeMillis() / 1000).toString();
+    Log.i("Flag", d.b(d.b("GZMC]AuC5NTQD2WN4VVVD3ZMKLUBS6GF9UO:SGOIVz", d.a(l2.substring(0, 3))), l2.substring(0, 5)));
+    Canvas lockCanvas = surfaceHolder.lockCanvas();
+    if (lockCanvas != null) {
+        gameView.this.draw(lockCanvas);
+        surfaceHolder.unlockCanvasAndPost(lockCanvas);
+    }
+}
+```
 We could reverse the decoding function by hand but it was much easier to just run the app on a phone and grep from the logs
 ```
 $ adb logcat | grep BZHCTF{
@@ -53,7 +63,22 @@ $ adb logcat | grep BZHCTF{
 
 ### Floppy 2
 
-For the second part of the challenge, the 
+For the second part of the challenge, the setup mentions beating the top score, which is 35000. This time we look for this specific value in the code and we find this function
+```java
+public String a(int i2) {
+    if (i2 < 35000) {
+        return "Try again ;)";
+    }
+    String l2 = Long.valueOf(System.currentTimeMillis() / 1000).toString();
+    String b2 = d.b(d.b("KSJAXHwP0P[V=ZW:D@Z]RPXJM\\ME[S[=NL_H>BE!s", d.a(l2.substring(0, 5))), l2.substring(0, 5));
+    Log.i("", b2);
+    return b2;
+}
+```
+Since we cannot juste beat the score normally, we decided to use an [online java compiler](https://www.jdoodle.com/online-java-compiler/) to run the decoding function used on the flag. We just have to copy the code from JADX to the compiler and only keep the parts we want to use. We can output the flag using `System.out.println()`.
+```
+BZHCTF{Y0UR_4_R3AL_TRY_HARDER_W3LL_D0NE!}
+```
 
 
 ## Others
