@@ -33,22 +33,28 @@ We could also see that the login should be `kalucheAdmin:))` if we wanted to val
 
 The password is checked in three rounds, and character by character. We only have to reverse the operation done one character at a time.
 ```
-pwd[0] ^ '!' == '@'       ==> pwd[0] = '!' ^ '@' = 'a'
+pwd[0] ^ '!' == '@'       ==> pwd[0] = '!' ^ '@'        = 'a'
 pwd[1] ^ 'm' + 36 == 123  ==> pwd[1] = (120 - 36) ^ 'm' = '9'
 [...]
-pwd[7] == pwd[5] ^ pwd[2] ==> pwd[7] = 'M' ^ ':' = 'w'
+pwd[7] == pwd[5] ^ pwd[2] ==> pwd[7] = 'M' ^ ':'        = 'w'
 ```
 We end up with `BZHCTF{a9:VbMxw}`
 
 
-
 ### Floppy 1
 
-This challenge was published during the night in a new "Android" category but it was still kind of a reversing challenge. It is based on a game which look like a copy of Flappy Bird. The first challenge was to find 
-
-
+This challenge was published during the night in a new "Android" category but it was still kind of a reversing challenge. It is based on a game which look like a copy of Flappy Bird. Not much info was given on how to find the flag but when we search for the string `flag` in the source code, we find this very intersting routine.
+![](/images/posts/BZHCTF2022/RE5.png)
+We could reverse the decoding function by hand but it was much easier to just run the app on a phone and grep from the logs
+```
+$ adb logcat | grep BZHCTF{
+05-05 02:44:17.552  9532  9532 I Flag    : BZHCTF{D0NT_F0RG3T_TH3_DEBUG_1NF0RM4TIONS}
+```
 
 ### Floppy 2
+
+For the second part of the challenge, the 
+
 
 ## Others
 
